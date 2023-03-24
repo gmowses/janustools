@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Jannus Tools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .btn-custom {
+            background-color: #2ecc71;
+            border-color: #2ecc71;
+        }
+        .btn-custom:hover {
+            background-color: #27ae60;
+            border-color: #27ae60;
+        }
+        .input-sm {
+            max-width: 200px; /* Defina a largura máxima desejada */
+        }
+        .m4 {
+            width: 100%;
+            height: 400px;
+            background-color: #F8F8F8;
+            border-radius: 10px;
+            overflow: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mb-5">Jannus Tools</h1>
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <p class="lead text-center">Escolha a ferramenta desejada abaixo</p>
+          <form method="post" action="{{ url_for('whois.t2web.com.br') }}">
+            <input type="hidden" name="acao" value="whois">
+            <button type="submit" class="btn btn-success btn-block mt-3">WHOIS ASN</button>
+          </form>
+          <form method="post" action="{{ url_for('speedrate.t2web.com.br') }}">
+            <input type="hidden" name="acao" value="gerador_qos">
+            <button type="submit" class="btn btn-success btn-block mt-3">GERADOR QOS</button>
+          </form>        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .container {
+        flex: 1;
+    }
+    .footer {
+        background-color: #2c3e50;
+        color: white;
+      padding: 50px;
+      text-align: center;
+    }
+</style>
+
+  <div class="footer">
+    <p>Desenvolvido por T2web &copy; 2023</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
