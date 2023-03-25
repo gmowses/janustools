@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Janus Tools</title>
+    <title>JanusTools | QoS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <style>
@@ -55,12 +55,37 @@
     <!-- Div da imagem -->
     <div class="bg-image"></div>
     <div class="container">
-      <h1 class="text-center mb-5">Janus Tools</h1>
+      <h1 class="text-center mb-5">Gerador de QoS</h1>
       <div class="row justify-content-center">
         <div class="col-sm-8">
-          <p class="lead text-center">Escolha a ferramenta desejada abaixo</p>
-          <a href="{{ url_for('whois') }}" class="btn btn-success btn-block mt-3">WHOIS ASN</a>
-          <a href="{{ url_for('qos') }}" class="btn btn-success btn-block mt-3">GERADOR QOS</a>    
+          <p class="lead text-center">" SOMENTE PARA HUAWEI "</p>
+          <form method="post" action="{{ url_for('qos') }}">
+            <div class="form-group">
+              <label for="down">Insira a banda máxima para download em Mega:</label>
+              <input type="text" class="form-control" id="down" name="down" placeholder="Exemplo: 1000" required pattern="[0-9]+">
+            </div>
+            <div class="form-group">
+              <label for="up">Insira a banda máxima para upload em Mega:</label>
+              <input type="text" class="form-control" id="up" name="up" placeholder="Exemplo: 1000" required pattern="[0-9]+">
+            </div>
+            <div class="form-group">
+              <label for="interface">Insira a VLAN que irá controlar (opcional):</label>
+              <input type="text" class="form-control" id="interface" name="interface" placeholder="Exemplo: 100" pattern="[0-9]+">
+            </div>
+            <button type="submit" class="btn btn-success btn-block mt-4">Gerar</button>
+          </form>
+          {% if output %}
+          <div class="container mt-4">
+            <h2 class="text-center mb-4">Resultado</h2>
+            <div class="card border-secondary">
+              <div class="card-body">
+                <pre class="mb-0"><code>{{ output }}</code></pre>
+              </div>
+            </div>
+          </div>
+          <br>
+          <a href="{{ url_for('index') }}" class="btn btn-secondary btn-sm">Voltar</a>
+        {% endif %}
         </div>
       </div>
     </div>
