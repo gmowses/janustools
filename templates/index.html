@@ -11,16 +11,10 @@
         color: white;
         margin: 0;
         padding: 0;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
       }
       .container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
       }
       .btn-custom {
         background-color: #2ecc71;
@@ -56,12 +50,6 @@
         opacity: 0.05;
         z-index: -1;
       }
-      footer {
-        background-color: #2c3e50;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-      }
     </style>
   </head>
   <body>
@@ -72,14 +60,11 @@
       <div class="row">
         <div class="col s12 m6 offset-m3">
           <p class="flow-text center-align">Escolha a ferramenta desejada abaixo</p>
-          <a href="{{ url_for('whois') }}" class="waves-effect waves-light btn btn-custom">WHOIS ASN</a>
-          <a href="{{ url_for('qos') }}" class="waves-effect waves-light btn btn-custom">GERADOR QOS</a>    
+          <a href="{{ url_for('whois') }}" class="waves-effect waves-light btn btn-custom btn-block">WHOIS ASN</a>
+          <a href="{{ url_for('qos') }}" class="waves-effect waves-light btn btn-custom btn-block">GERADOR QOS</a>    
         </div>
       </div>
     </div>
-
-    <!-- Importando arquivos JS do Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <footer class="page-footer #2c3e50 blue-grey darken-3">
       <div class="container">
@@ -90,6 +75,8 @@
         </div>
       </div>
     </footer>
+
+    <!-- Importando arquivos JS do Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
- 
